@@ -1,0 +1,28 @@
+[user]
+	name = Justin Gable
+	email = justgable@gmail.com
+[color]
+	status = auto
+	branch = auto
+[core]
+	excludesfile = /Users/jgable/.gitignore
+[alias]
+  s = status
+  b = branch
+  c = commit
+  cam = commit -am
+  co = checkout
+  a = add
+  df = diff
+  l = log
+  lsd = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  sub = submodule
+[push]
+[push]
+	default = matching
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
