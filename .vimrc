@@ -49,6 +49,13 @@ set wildmode=longest,list
 
 set cursorline
 
+" Fixes lines with odd number of indents
+set shiftround
+
+" Allow to Tab and S-Tab on highlighted text
+vnoremap <tab> >`<V`>
+vnoremap <s-tab> <`<V`>
+
 " Prevent Vim from destroying scrollback buffer
 " See: http://www.shallowsky.com/linux/noaltscreen.html
 " set t_ti= t_te=
