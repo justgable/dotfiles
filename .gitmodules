@@ -4,9 +4,6 @@
 [submodule ".vim/bundle/ScrollColors"]
 	path = .vim/bundle/ScrollColors
 	url = https://github.com/vim-scripts/ScrollColors
-[submodule ".vim/bundle/YouCompleteMe"]
-	path = .vim/bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe
 [submodule ".vim/bundle/ctrlp.vim"]
 	path = .vim/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim
