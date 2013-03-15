@@ -61,3 +61,6 @@
 [submodule ".vim/bundle/vim-powerline"]
 	path = .vim/bundle/vim-powerline
 	url = https://github.com/Lokaltog/vim-powerline
+[submodule ".vim/bundle/vim-snipmate"]
+	path = .vim/bundle/vim-snipmate
+	url = https://github.com/garbas/vim-snipmate
