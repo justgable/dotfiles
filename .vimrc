@@ -11,7 +11,7 @@ set t_Co=256
 if has('gui_running')
   colorscheme tommorow-night
 else
-  colorscheme lite-brite
+  colorscheme litebrite
 endif
 
 " Turn on number lines
