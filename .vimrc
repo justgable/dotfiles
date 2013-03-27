@@ -49,6 +49,8 @@ set wildmode=longest,list
 
 set cursorline
 
+let mapleader=","
+
 " Fixes lines with odd number of indents
 set shiftround
 
@@ -162,3 +164,26 @@ let g:CSApprox_verbose_level = 0
 "       \ 'text' : 1,
 "       \ 'html' : 1,
 "       \}
+
+" Screen settings
+let g:ScreenImpl = 'Tmux'
+let g:ScreenShellTmuxInitArgs = '-2'
+let g:ScreenShellInitialFocus = 'shell'
+let g:ScreenShellQuitOnVimExit = 0
+
+" map <F5> :ScreenShellVertical<CR>
+command -nargs=? -complete=shellcmd W  :w | :call ScreenShellSend("load '".@%."';")
+map <Leader>r :w<CR> :call ScreenShellSend("rspec ".@% . ':' . line('.'))<CR>
+map <Leader>e :w<CR> :call ScreenShellSend("cucumber --format=pretty ".@% . ':' . line('.'))<CR>
+map <Leader>b :w<CR> :call ScreenShellSend("break ".@% . ':' . line('.'))<CR>
+
+" Joel's suggested screen settings
+nnoremap <leader>ssv :ScreenShellVertical<cr>
+nnoremap <leader>ssr :ScreenShellReopen<cr>
+nnoremap <leader>ssq :ScreenQuit<cr>
+nnoremap <leader>sss :ScreenSend<cr>
+
+" " Send the current line.
+" nnoremap <leader>sel :call ScreenShellSend(getline("."))<cr>
+" " Send the whole file (line by line)
+" nnoremap <leader>sef :call ScreenShellSend(getline(1, "$"))<cr>
