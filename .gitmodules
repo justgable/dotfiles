@@ -64,3 +64,6 @@
 [submodule ".vim/bundle/screen"]
 	path = .vim/bundle/screen
 	url = https://github.com/ervandew/screen
+[submodule ".vim/bundle/tmux.vim"]
+	path = .vim/bundle/tmux.vim
+	url = https://github.com/zaiste/tmux.vim
