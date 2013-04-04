@@ -63,10 +63,10 @@ unsetopt correct_all
 
 # Customize to your needs...
 #export PATH=/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$HOME/local/node/bin:/Users/jgable/android-sdks/tools:/Users/jgable/android-sdks/platform-tools
-export PATH=/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/Users/jgable/android-sdks/tools:/Users/jgable/android-sdks/platform-tools
+export PATH=/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/Users/jgable/android-sdks/tools:/Users/jgable/android-sdks/platform-tools:/opt/vagrant/bin
 
 # For homebrew apps to use non-homebrew Python
 #export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 export PYTHONPATH=/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7:$PYTHONPATH
 
-PATH=$PATH:$HOME/.rvm/bin:$HOME/.rvm/gems/ruby-1.9.3-p125@global # Add RVM to PATH for scripting
+# PATH=$PATH:$HOME/.rvm/bin:$HOME/.rvm/gems/ruby-1.9.3-p125@global # Add RVM to PATH for scripting

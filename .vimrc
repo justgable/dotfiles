@@ -183,7 +183,7 @@ nnoremap <leader>ssr :ScreenShellReopen<cr>
 nnoremap <leader>ssq :ScreenQuit<cr>
 nnoremap <leader>sss :ScreenSend<cr>
 
-" " Send the current line.
-" nnoremap <leader>sel :call ScreenShellSend(getline("."))<cr>
-" " Send the whole file (line by line)
-" nnoremap <leader>sef :call ScreenShellSend(getline(1, "$"))<cr>
+" Send the current line.
+nnoremap <leader>ssl :call ScreenShellSend(getline("."))<cr>
+" Send the whole file (line by line)
+nnoremap <leader>ssf :call ScreenShellSend(getline(1, "$"))<cr>
