@@ -67,3 +67,9 @@
 [submodule ".vim/bundle/tmux.vim"]
 	path = .vim/bundle/tmux.vim
 	url = https://github.com/zaiste/tmux.vim
+[submodule "vim-repeat"]
+	path = vim-repeat
+	url = https://github.com/tpope/vim-repeat
+[submodule "sh.vim"]
+	path = sh.vim
+	url = https://github.com/vim-scripts/sh.vim
