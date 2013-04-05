@@ -76,3 +76,6 @@
 [submodule ".vim/bundle/vim-vividchalk"]
 	path = .vim/bundle/vim-vividchalk
 	url = https://github.com/tpope/vim-vividchalk
+[submodule ".vim/bundle/gruvbox"]
+	path = .vim/bundle/gruvbox
+	url = https://github.com/morhetz/gruvbox
