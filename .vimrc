@@ -14,6 +14,7 @@ else
   " colorscheme litebrite
   " colorscheme lucius
   colorscheme molokai
+  " colorscheme vividchalk
 endif
 
 " Turn on number lines
