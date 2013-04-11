@@ -9,7 +9,7 @@ syntax on
 set t_Co=256
 
 if has('gui_running')
-  colorscheme tommorow-night
+  colorscheme molokai
 else
   " colorscheme litebrite
   " colorscheme lucius

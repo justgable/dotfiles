@@ -79,3 +79,6 @@
 [submodule ".vim/bundle/gruvbox"]
 	path = .vim/bundle/gruvbox
 	url = https://github.com/morhetz/gruvbox
+[submodule ".vim/bundle/vim-puppet"]
+	path = .vim/bundle/vim-puppet
+	url = https://github.com/rodjek/vim-puppet
