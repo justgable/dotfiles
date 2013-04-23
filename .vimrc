@@ -44,7 +44,7 @@ set winheight=24
 set ruler
 
 " Look for and call vim commands within first 5 lines of a doc
-set modeline
+" set modeline
 set modelines=5
 
 set wildmenu
@@ -117,16 +117,22 @@ nmap <space> :
 imap jj <esc>
 
 " Remap pageup / pagedown
-map <C-j> <C-D>
-map <C-k> <C-U>
+" map <C-j> <C-D>
+" map <C-k> <C-U>
+
+" Split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " Tab cycling
-map <C-S-h> :tabprevious<CR>
-map <C-S-l> :tabnext<CR>
+" map <C-S-h> :tabprevious<CR>
+" map <C-S-l> :tabnext<CR>
 
 " Buffer cycling
-nmap <C-h> :bprevious<CR>
-nmap <C-l> :bnext<CR>
+" nmap <C-h> :bprevious<CR>
+" nmap <C-l> :bnext<CR>
 
 " For autocompletion
 set wildmode=list:longest

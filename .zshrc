@@ -24,6 +24,7 @@ alias wr='cd ~/www'
 alias wl='cd ~/wasteland'
 alias h='cd ~'
 alias phpc='php app/console'
+alias v='vagrant'
 
 # Work related aliases
 alias sshitsa='ssh itsadmin@10.5.6.182'
