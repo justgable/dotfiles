@@ -58,6 +58,10 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git ruby rails osx)
 
+# tmuxinator
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+export EDITOR="mvim -v"
+
 source $ZSH/oh-my-zsh.sh
 #source ~/local/node/lib/node_modules/npm/lib/utils/completion.sh
 unsetopt correct_all
