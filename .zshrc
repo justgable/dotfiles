@@ -8,11 +8,10 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="justin"
 
 # Aliases
-#alias ohmyzsh="mate ~/.oh-my-zsh"
 alias zshrc="mvim -v ~/.zshrc"
 alias vimrc="mvim -v ~/.vimrc"
-# alias l='ls -l'
-# alias la='ls -la'
+alias l='ls -l'
+alias la='ls -la'
 alias lah='ls -lah'
 alias vim='mvim -v'
 alias ar='sudo apachectl -k restart'
@@ -26,7 +25,7 @@ alias h='cd ~'
 alias phpc='php app/console'
 alias v='vagrant'
 
-# Work related aliases
+# FCOE aliases
 alias sshitsa='ssh itsadmin@10.5.6.182'
 alias sshitsa2='ssh itsadmin@10.5.6.184'
 
