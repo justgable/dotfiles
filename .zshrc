@@ -16,25 +16,21 @@ alias lah='ls -lah'
 alias vim='mvim -v'
 alias ar='sudo apachectl -k restart'
 alias av='sudo vim /etc/apache2/other/httpd-vhosts.conf'
-alias d6='cd ~/www/drupal6.dev/sites/'
-alias d7='cd ~/www/drupal7.dev/sites/'
-alias d8='cd ~/www/drupal-8.x-dev/sites/'
-alias wr='cd ~/www'
 alias wl='cd ~/wasteland'
 alias h='cd ~'
 alias phpc='php app/console'
 alias v='vagrant'
 
 # FCOE aliases
-alias sshitsa='ssh itsadmin@10.5.6.182'
-alias sshitsa2='ssh itsadmin@10.5.6.184'
+# alias sshitsa='ssh itsadmin@10.5.6.182'
+# alias sshitsa2='ssh itsadmin@10.5.6.184'
 
 # git alisas
 alias g='git '
 
 # Added for PEAR
-alias pear="php /usr/lib/php/pear/pearcmd.php"
-alias pecl="php /usr/lib/php/pear/peclcmd.php"
+# alias pear="php /usr/lib/php/pear/pearcmd.php"
+# alias pecl="php /usr/lib/php/pear/peclcmd.php"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -67,7 +63,7 @@ unsetopt correct_all
 
 # Customize to your needs...
 #export PATH=/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$HOME/local/node/bin:/Users/jgable/android-sdks/tools:/Users/jgable/android-sdks/platform-tools
-export PATH=/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/Users/jgable/android-sdks/tools:/Users/jgable/android-sdks/platform-tools:/opt/vagrant/bin
+export PATH=/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 
 # For homebrew apps to use non-homebrew Python
 #export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
