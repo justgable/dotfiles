@@ -26,6 +26,12 @@ alias v='vagrant'
 # alias sshitsa='ssh itsadmin@10.5.6.182'
 # alias sshitsa2='ssh itsadmin@10.5.6.184'
 
+# FPU aliases
+alias sshlnx1='ssh network_services@lnx-1.fresno.edu -p 22010'
+alias sshlnx3='ssh jgable@lnx-3.fresno.edu'
+alias sshlnx4='ssh jgable@lnx-4.fresno.edu'
+alias sshlnx5='ssh webteam@lnx-5.fresno.edu'
+
 # git alisas
 alias g='git '
 
