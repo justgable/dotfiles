@@ -88,3 +88,6 @@
 [submodule ".vim/bundle/vim-airline"]
 	path = .vim/bundle/vim-airline
 	url = https://github.com/bling/vim-airline
+[submodule ".vim/bundle/powerline-fonts"]
+	path = .vim/bundle/powerline-fonts
+	url = https://github.com/Lokaltog/powerline-fonts
