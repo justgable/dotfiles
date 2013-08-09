@@ -22,7 +22,7 @@ alias vimrc="vim -v ~/.vimrc"
 alias ar='sudo apachectl -k restart'
 alias h='cd ~'
 alias g='git'
-alias gcam='git commit -v -a'
+alias gcam='git commit -v -a -m '
 
 # Unix
 # alias u='sudo -u
