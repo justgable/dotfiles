@@ -22,6 +22,7 @@ alias vimrc="vim -v ~/.vimrc"
 alias ar='sudo apachectl -k restart'
 alias h='cd ~'
 alias g='git'
+alias gcam='git commit -v -a'
 
 # Unix
 # alias u='sudo -u
@@ -60,7 +61,8 @@ COMPLETION_WAITING_DOTS="true"
 # (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-# plugins=(git ruby rails osx)
+# Useful plugins (git ruby rails osx)
+plugins=(git ruby rails)
 
 ### PATHS
 
