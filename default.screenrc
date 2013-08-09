@@ -1,0 +1,2 @@
+# Change escape command form C-a to C-b
+escape ^Bb
