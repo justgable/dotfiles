@@ -8,6 +8,9 @@ Run these commands on initial setup:
     # Install oh-my-zsh (https://github.com/robbyrussell/oh-my-zsh)
     curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
+    # Update all the submodules
+    git submodule foreach git pull
+
     cp default.zshrc .zshrc
     cp default.vimrc .vimrc
 
