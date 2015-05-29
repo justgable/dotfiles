@@ -86,7 +86,7 @@ if has("autocmd")
   endif
 
   " Alternate syntax highlights and indentation
-  au BufRead,BufNewFile *.scss set filetype=css
+  au BufRead,BufNewFile *.scss set filetype=sass
   au FileType c,cpp,objc set tabstop=4 shiftwidth=4 softtabstop=4
   autocmd BufRead,BufNewFile *.module,*.install,*.test,*.inc,*.view set filetype=php
 
@@ -137,10 +137,10 @@ imap jj <esc>
 " map <C-k> <C-U>
 
 " Split navigation
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+nnoremap <C-j> <C-W><C-J>
+nnoremap <C-k> <C-W><C-K>
+nnoremap <C-l> <C-W><C-L>
+nnoremap <C-h> <C-W><C-H>
 
 " Tab cycling
 " map <C-S-h> :tabprevious<CR>
@@ -149,6 +149,8 @@ nnoremap <C-H> <C-W><C-H>
 " Buffer cycling
 " nmap <C-h> :bprevious<CR>
 " nmap <C-l> :bnext<CR>
+" nmap <C-S-h> :bprevious<CR>
+" nmap <C-S-l> :bnext<CR>
 
 " For autocompletion
 set wildmode=list:longest
