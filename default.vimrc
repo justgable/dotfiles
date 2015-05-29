@@ -117,7 +117,8 @@ let g:airline_linecolumn_prefix = '␤ '
 let g:airline_fugitive_prefix = '⎇ '
 let g:airline_paste_symbol = 'ρ'
 
-
+" vim-jsx syntax
+let g:jsx_ext_required = 0
 
 " Case insensitive search
 set ignorecase
