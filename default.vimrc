@@ -1,6 +1,43 @@
-"topbar Pathogen FTW!
-call pathogen#infect()
-call pathogen#helptags()
+" Vundle
+filetype off
+set runtimepath+=~/.vim/bundle/vundle
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+" -Utilities
+Bundle 'kien/ctrlp.vim'
+Bundle 'tmhedberg/matchit'
+Bundle 'scrooloose/nerdtree'
+Bundle 'ervandew/screen'
+Bundle 'godlygeek/tabular'
+Bundle 'tomtom/tcomment_vim'
+Bundle 'vim-scripts/tlib'
+Bundle 'tomtom/tlib_vim.git'
+Bundle 'zaiste/tmux.vim'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'bling/vim-airline'
+Bundle 'roblillack/vim-bufferlist'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
+
+" -Syntax & Language
+Bundle 'othree/html5-syntax.vim'
+Bundle 'cakebaker/scss-syntax.vim'
+Bundle 'mxw/vim-jsx'
+Bundle 'tpope/vim-rails'
+Bundle 'qbbr/vim-twig'
+Bundle 'garbas/vim-snipmate'
+
+" -Color
+Bundle 'vim-scripts/CSApprox'
+Bundle 'vim-scripts/ScrollColors'
+Bundle 'morhetz/gruvbox'
+Bundle 'Lokaltog/powerline-fonts'
+Bundle 'flazz/vim-colorschemes'
+Bundle 'tpope/vim-vividchalk'
+
+" END Vundle
 
 " Turn on syntax highlighting
 syntax on
@@ -16,8 +53,8 @@ if has('gui_running')
 else
   " colorscheme litebrite
   " colorscheme lucius
-  " colorscheme molokai
-  colorscheme no_quarter
+  colorscheme nerv-ous
+  " colorscheme no_quarter
   " colorscheme vividchalk
 endif
 
@@ -150,8 +187,8 @@ nnoremap <C-h> <C-W><C-H>
 " Buffer cycling
 " nmap <C-h> :bprevious<CR>
 " nmap <C-l> :bnext<CR>
-" nmap <C-S-h> :bprevious<CR>
-" nmap <C-S-l> :bnext<CR>
+nmap <A-S-h> :bprevious<CR>
+nmap <A-S-l> :bnext<CR>
 
 " For autocompletion
 set wildmode=list:longest
@@ -169,6 +206,19 @@ let g:ctrlp_map = ';'
 let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py|tmp'
 let g:ctrlp_dotfiles = 0
 let g:ctrlp_switch_buffer = 0
+
+" use Git project for autocompletion
+let g:ctrlp_use_caching = 0
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+else
+  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+  let g:ctrlp_prompt_mappings = {
+        \ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
+        \ }
+endif
 
 " for copy paste with mouse
 " set mouse=r
@@ -215,3 +265,17 @@ nnoremap <leader>sss :ScreenSend<cr>
 nnoremap <leader>ssl :call ScreenShellSend(getline("."))<cr>
 " Send the whole file (line by line)
 nnoremap <leader>ssf :call ScreenShellSend(getline(1, "$"))<cr>
+
+" Stop that stupid window from popping up (http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/)
+map q: :q
+
+" vp doesn't replace paste buffer
+function! RestoreRegister()
+  let @" = s:restore_reg
+  return ''
+endfunction
+function! s:Repl()
+  let s:restore_reg = @"
+  return "p@=RestoreRegister()\<cr>"
+endfunction
+vmap <silent> <expr> p <sid>Repl()
