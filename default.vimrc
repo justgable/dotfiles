@@ -1,41 +1,45 @@
-" Vundle
+set nocompatible
+filetype on
 filetype off
-set runtimepath+=~/.vim/bundle/vundle
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " -Utilities
-Bundle 'kien/ctrlp.vim'
-Bundle 'tmhedberg/matchit'
-Bundle 'scrooloose/nerdtree'
-Bundle 'ervandew/screen'
-Bundle 'godlygeek/tabular'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'vim-scripts/tlib'
-Bundle 'tomtom/tlib_vim.git'
-Bundle 'zaiste/tmux.vim'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'bling/vim-airline'
-Bundle 'roblillack/vim-bufferlist'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
+Plugin 'git://github.com/kien/ctrlp.vim'
+Plugin 'git://github.com/tmhedberg/matchit'
+Plugin 'git://github.com/scrooloose/nerdtree'
+Plugin 'git://github.com/ervandew/screen'
+Plugin 'git://github.com/godlygeek/tabular'
+Plugin 'git://github.com/tomtom/tcomment_vim'
+Plugin 'git://github.com/vim-scripts/tlib'
+Plugin 'git://github.com/tomtom/tlib_vim.git'
+Plugin 'git://github.com/zaiste/tmux.vim'
+Plugin 'git://github.com/MarcWeber/vim-addon-mw-utils'
+Plugin 'git://github.com/bling/vim-airline'
+Plugin 'git://github.com/roblillack/vim-bufferlist'
+Plugin 'git://github.com/tpope/vim-repeat'
+Plugin 'git://github.com/tpope/vim-surround'
 
 " -Syntax & Language
-Bundle 'othree/html5-syntax.vim'
-Bundle 'cakebaker/scss-syntax.vim'
-Bundle 'mxw/vim-jsx'
-Bundle 'tpope/vim-rails'
-Bundle 'qbbr/vim-twig'
-Bundle 'garbas/vim-snipmate'
+Plugin 'git://github.com/othree/html5-syntax.vim'
+Plugin 'git://github.com/cakebaker/scss-syntax.vim'
+Plugin 'git://github.com/mxw/vim-jsx'
+Plugin 'git://github.com/tpope/vim-rails'
+Plugin 'git://github.com/qbbr/vim-twig'
+Plugin 'git://github.com/garbas/vim-snipmate'
 
 " -Color
-Bundle 'vim-scripts/CSApprox'
-Bundle 'vim-scripts/ScrollColors'
-Bundle 'morhetz/gruvbox'
-Bundle 'Lokaltog/powerline-fonts'
-Bundle 'flazz/vim-colorschemes'
-Bundle 'tpope/vim-vividchalk'
+" Plugin 'git://github.com/godlygeek/csapprox'
+Plugin 'git://github.com/vim-scripts/ScrollColors'
+Plugin 'git://github.com/morhetz/gruvbox'
+Plugin 'git://github.com/Lokaltog/powerline-fonts'
+Plugin 'git://github.com/flazz/vim-colorschemes'
+Plugin 'git://github.com/tpope/vim-vividchalk'
+
+call vundle#end()
+filetype plugin indent on
 
 " END Vundle
 
@@ -53,7 +57,8 @@ if has('gui_running')
 else
   " colorscheme litebrite
   " colorscheme lucius
-  colorscheme nerv-ous
+  " colorscheme nerv-ous
+  colorscheme night_vision
   " colorscheme no_quarter
   " colorscheme vividchalk
 endif
@@ -146,13 +151,14 @@ endif
 
 " Airline settings
 " let g:airline_enable_syntastic=1
+let g:airline_symbols = {}
 let g:airline_theme='badwolf'
 let g:airline_powerline_fonts=1
 " let g:airline_left_sep = '▶'
 " let g:airline_right_sep = '◀'
-let g:airline_linecolumn_prefix = '␤ '
-let g:airline_fugitive_prefix = '⎇ '
-let g:airline_paste_symbol = 'ρ'
+let g:airline_symbols.linenr = '␤ '
+" let g:airline_fugitive_prefix = '⎇ '
+let g:airline_symbols.paste = 'ρ'
 
 " vim-jsx syntax
 let g:jsx_ext_required = 0
