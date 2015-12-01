@@ -7,36 +7,39 @@ call vundle#begin()
 Plugin 'gmarik/vundle'
 
 " -Utilities
-Plugin 'git://github.com/kien/ctrlp.vim'
-Plugin 'git://github.com/tmhedberg/matchit'
-Plugin 'git://github.com/scrooloose/nerdtree'
-Plugin 'git://github.com/ervandew/screen'
-Plugin 'git://github.com/godlygeek/tabular'
-Plugin 'git://github.com/tomtom/tcomment_vim'
-Plugin 'git://github.com/vim-scripts/tlib'
-Plugin 'git://github.com/tomtom/tlib_vim.git'
-Plugin 'git://github.com/zaiste/tmux.vim'
-Plugin 'git://github.com/MarcWeber/vim-addon-mw-utils'
-Plugin 'git://github.com/bling/vim-airline'
-Plugin 'git://github.com/roblillack/vim-bufferlist'
-Plugin 'git://github.com/tpope/vim-repeat'
-Plugin 'git://github.com/tpope/vim-surround'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tmhedberg/matchit'
+Plugin 'scrooloose/nerdtree'
+Plugin 'ervandew/screen'
+Plugin 'godlygeek/tabular'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'vim-scripts/tlib'
+Plugin 'tomtom/tlib_vim.git'
+Plugin 'zaiste/tmux.vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'bling/vim-airline'
+Plugin 'roblillack/vim-bufferlist'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
 
 " -Syntax & Language
-Plugin 'git://github.com/othree/html5-syntax.vim'
-Plugin 'git://github.com/cakebaker/scss-syntax.vim'
-Plugin 'git://github.com/mxw/vim-jsx'
-Plugin 'git://github.com/tpope/vim-rails'
-Plugin 'git://github.com/qbbr/vim-twig'
-Plugin 'git://github.com/garbas/vim-snipmate'
+Plugin 'othree/html5-syntax.vim'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'mxw/vim-jsx'
+Plugin 'tpope/vim-rails'
+Plugin 'qbbr/vim-twig'
+" Plugin 'garbas/vim-snipmate'
+Plugin 'wavded/vim-stylus'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 " -Color
-" Plugin 'git://github.com/godlygeek/csapprox'
-Plugin 'git://github.com/vim-scripts/ScrollColors'
-Plugin 'git://github.com/morhetz/gruvbox'
-Plugin 'git://github.com/Lokaltog/powerline-fonts'
-Plugin 'git://github.com/flazz/vim-colorschemes'
-Plugin 'git://github.com/tpope/vim-vividchalk'
+Plugin 'godlygeek/csapprox'
+Plugin 'vim-scripts/ScrollColors'
+Plugin 'morhetz/gruvbox'
+Plugin 'Lokaltog/powerline-fonts'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'tpope/vim-vividchalk'
 
 call vundle#end()
 filetype plugin indent on
@@ -46,9 +49,6 @@ filetype plugin indent on
 " Turn on syntax highlighting
 syntax on
 
-" Use OSX clipboard (Does not work in Mountain Lion)
-" set clipboard=unnamed
-
 " Color scheme
 set t_Co=256
 
@@ -57,10 +57,9 @@ if has('gui_running')
 else
   " colorscheme litebrite
   " colorscheme lucius
-  " colorscheme nerv-ous
-  colorscheme night_vision
-  " colorscheme no_quarter
-  " colorscheme vividchalk
+  colorscheme nerv-ous
+  " colorscheme neon
+  " colorscheme muon
 endif
 
 " Turn on number lines
@@ -134,20 +133,15 @@ if has("autocmd")
 
 endif
 
-if has("gui_macvim")
-  let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
-  let g:clang_complete_auto = 1
-  set omnifunc=ClangComplete
-  let g:clang_user_options='clang -cc1 -triple i386-apple-macosx10.6.7 -target-cpu yonah -target-linker-version 128.2 -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/3.1 -fblocks -x objective-c -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk -D __IPHONE_OS_VERSION_MIN_REQUIRED=50100 || exit 0'
-endif
+" if has("gui_macvim")
+"   let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
+"   let g:clang_complete_auto = 1
+"   set omnifunc=ClangComplete
+"   let g:clang_user_options='clang -cc1 -triple i386-apple-macosx10.6.7 -target-cpu yonah -target-linker-version 128.2 -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/3.1 -fblocks -x objective-c -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk -D __IPHONE_OS_VERSION_MIN_REQUIRED=50100 || exit 0'
+" endif
 
-" Syntastic settings
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
-" Powerline settings - use cool icons
-" let g:Powerline_symbols = 'fancy'
+" avoiding annoying CSApprox warning message
+let g:CSApprox_verbose_level = 0
 
 " Airline settings
 " let g:airline_enable_syntastic=1
@@ -157,7 +151,6 @@ let g:airline_powerline_fonts=1
 " let g:airline_left_sep = '▶'
 " let g:airline_right_sep = '◀'
 let g:airline_symbols.linenr = '␤ '
-" let g:airline_fugitive_prefix = '⎇ '
 let g:airline_symbols.paste = 'ρ'
 
 " vim-jsx syntax
@@ -191,13 +184,19 @@ nnoremap <C-h> <C-W><C-H>
 " map <C-S-l> :tabnext<CR>
 
 " Buffer cycling
-" nmap <C-h> :bprevious<CR>
-" nmap <C-l> :bnext<CR>
 nmap <A-S-h> :bprevious<CR>
 nmap <A-S-l> :bnext<CR>
 
 " For autocompletion
 set wildmode=list:longest
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
 " Turn on code folding
 set foldenable
@@ -225,29 +224,6 @@ else
         \ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
         \ }
 endif
-
-" for copy paste with mouse
-" set mouse=r
-
-" Set shortcut for BufferList plugin
-" nmap 9 :call BufferList()<CR>
-
-" NERDTree shortcut
-" nmap 3 :NERDTreeToggle<CR>
-
-" NERDTree show hidden files
-" let NERDTreeShowHidden=1
-
-" avoiding annoying CSApprox warning message
-let g:CSApprox_verbose_level = 0  
-
-" filetypes for YouCompleteMe to ignore
-" let g:ycm_filetypes_to_completely_ignore = {
-"       \ 'notes' : 1,
-"       \ 'markdown' : 1,
-"       \ 'text' : 1,
-"       \ 'html' : 1,
-"       \}
 
 " Screen settings
 let g:ScreenImpl = 'Tmux'
