@@ -7,10 +7,10 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
 
 # Make sure you symlink this theme from the dotfiles repo first
-# ZSH_THEME="justin"
+ZSH_THEME="justin"
 
 
 ### Aliases
@@ -19,10 +19,17 @@ alias la='ls -la'
 alias lah='ls -lah'
 alias zshrc="vim -v ~/.zshrc"
 alias vimrc="vim -v ~/.vimrc"
-alias ar='sudo apachectl -k restart'
 alias h='cd ~'
 alias g='git'
 alias gcam='git commit -v -a -m '
+alias gs='git status'
+
+# TMUX
+alias ta='tmux attach -t '
+alias tl='tmux list-sessions'
+alias tn='tmux new -s '
+alias ts='tmux switch -t '
+alias tk='tmux kill-session -t '
 
 # Unix
 # alias u='sudo -u
@@ -35,10 +42,6 @@ alias gcam='git commit -v -a -m '
 # alias wl='cd ~/wasteland'
 # alias pear="php /usr/lib/php/pear/pearcmd.php" 
 # alias pecl="php /usr/lib/php/pear/peclcmd.php" 
-
-# Work aliases
-# ssh... = username@domain
-
 
 ### Default zsh settings
 
@@ -72,12 +75,8 @@ unsetopt correct_all
 # Customize to your needs...
 # export PATH=/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/share/npm/bin
 
-# tmuxinator
-# [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
-# export EDITOR="mvim -v"
-
 # For homebrew apps to use non-homebrew Python
-#export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+# export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 # export PYTHONPATH=/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7:$PYTHONPATH
 
 # Add RVM to PATH for scripting

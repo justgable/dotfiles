@@ -21,17 +21,20 @@ Plugin 'bling/vim-airline'
 Plugin 'roblillack/vim-bufferlist'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
+Plugin 'joonty/vdebug'
 
 " -Syntax & Language
 Plugin 'othree/html5-syntax.vim'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'tpope/vim-rails'
-Plugin 'qbbr/vim-twig'
+Plugin 'evidens/vim-twig'
+
 " Plugin 'garbas/vim-snipmate'
 Plugin 'wavded/vim-stylus'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'scrooloose/syntastic'
 
 " -Color
 Plugin 'godlygeek/csapprox'
@@ -40,6 +43,7 @@ Plugin 'morhetz/gruvbox'
 Plugin 'Lokaltog/powerline-fonts'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'tpope/vim-vividchalk'
+Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
 filetype plugin indent on
@@ -55,11 +59,10 @@ set t_Co=256
 if has('gui_running')
   colorscheme molokai
 else
-  " colorscheme litebrite
-  " colorscheme lucius
-  colorscheme nerv-ous
-  " colorscheme neon
-  " colorscheme muon
+  let g:solarized_termcolors=256
+  set background=dark
+  colorscheme solarized
+  " colorscheme nerv-ous
 endif
 
 " Turn on number lines
@@ -88,6 +91,9 @@ set winheight=24
 "Show line and column info
 set ruler
 
+"Show 80 character line
+set colorcolumn=80
+
 " Look for and call vim commands within first 5 lines of a doc
 " set modeline
 set modelines=5
@@ -96,6 +102,9 @@ set wildmenu
 set wildmode=longest,list
 
 set cursorline
+
+" Copy to system clipboard
+set clipboard=unnamed
 
 let mapleader=","
 
@@ -129,7 +138,7 @@ if has("autocmd")
   " Alternate syntax highlights and indentation
   au BufRead,BufNewFile *.scss set filetype=sass
   au FileType c,cpp,objc set tabstop=4 shiftwidth=4 softtabstop=4
-  autocmd BufRead,BufNewFile *.module,*.install,*.test,*.inc,*.view set filetype=php
+  autocmd BufRead,BufNewFile *.theme,*.module,*.install,*.test,*.inc,*.view set filetype=php
 
 endif
 
@@ -142,6 +151,20 @@ endif
 
 " avoiding annoying CSApprox warning message
 let g:CSApprox_verbose_level = 0
+
+" Syntastic settings (recommended)
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 2
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" " php settings
+let g:syntastic_php_checkers = ['php', 'phpcs']
+let g:syntastic_php_phpcs_args = "--standard=Drupal"
 
 " Airline settings
 " let g:airline_enable_syntastic=1
@@ -208,7 +231,7 @@ endif
 
 " ctrlp settings
 let g:ctrlp_map = ';'
-let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py|tmp'
+let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py|tmp|[\/](node_modules|target|dist|config_)'
 let g:ctrlp_dotfiles = 0
 let g:ctrlp_switch_buffer = 0
 
