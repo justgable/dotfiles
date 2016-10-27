@@ -14,4 +14,12 @@ Run these commands on initial setup:
     cp default.zshrc .zshrc
     cp default.vimrc .vimrc
 
+    # Download Vundle to ~/.vim
+    mkdir ~/.vim
+    mkdir ~/.vim/bundle
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+    # Run Vundle to install vim plugins
+    vim +PluginInstall +qall
+
 TODO: Write script to copy and symlink files
