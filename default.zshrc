@@ -14,8 +14,8 @@ ZSH_THEME="justin"
 
 
 ### Aliases
-alias l='ls -l'
-alias la='ls -la'
+alias l='ls'
+alias la='ls -a'
 alias lah='ls -lah'
 alias zshrc="vim -v ~/.zshrc"
 alias vimrc="vim -v ~/.vimrc"
@@ -34,6 +34,13 @@ alias tk='tmux kill-session -t '
 # Unix
 # alias u='sudo -u
 # u() { sudo -u "$*" zsh; }
+
+# Create directory tree and cd into last directory
+# Take(n) from kepford
+function take () {
+  mkdir -p "$1"
+  cd "$1"
+}
 
 # OSX
 # alias vim='mvim -v'
