@@ -4,7 +4,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/vundle'
 
 " -Utilities
 Plugin 'kien/ctrlp.vim'
@@ -26,9 +26,10 @@ Plugin 'joonty/vdebug'
 " -Syntax & Language
 Plugin 'othree/html5-syntax.vim'
 Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'mxw/vim-jsx'
+" Plugin 'mxw/vim-jsx'
 Plugin 'tpope/vim-rails'
 Plugin 'evidens/vim-twig'
+Plugin 'Glench/Vim-Jinja2-Syntax'
 
 " Plugin 'garbas/vim-snipmate'
 Plugin 'wavded/vim-stylus'
@@ -94,6 +95,9 @@ set ruler
 "Show 80 character line
 set colorcolumn=80
 
+" Turn on Omni completion
+set omnifunc=syntaxcomplete#Complete
+
 " Look for and call vim commands within first 5 lines of a doc
 " set modeline
 set modelines=5
@@ -136,6 +140,7 @@ if has("autocmd")
   endif
 
   " Alternate syntax highlights and indentation
+  au BufRead,BufNewFile *.njk set filetype=jinja
   au BufRead,BufNewFile *.scss set filetype=sass
   au FileType c,cpp,objc set tabstop=4 shiftwidth=4 softtabstop=4
   autocmd BufRead,BufNewFile *.theme,*.module,*.install,*.test,*.inc,*.view set filetype=php
@@ -148,6 +153,7 @@ endif
 "   set omnifunc=ClangComplete
 "   let g:clang_user_options='clang -cc1 -triple i386-apple-macosx10.6.7 -target-cpu yonah -target-linker-version 128.2 -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/3.1 -fblocks -x objective-c -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk -D __IPHONE_OS_VERSION_MIN_REQUIRED=50100 || exit 0'
 " endif
+
 
 " avoiding annoying CSApprox warning message
 let g:CSApprox_verbose_level = 0
@@ -169,7 +175,7 @@ let g:syntastic_php_phpcs_args = "--standard=Drupal"
 " Airline settings
 " let g:airline_enable_syntastic=1
 let g:airline_symbols = {}
-let g:airline_theme='badwolf'
+" let g:airline_theme='badwolf'
 let g:airline_powerline_fonts=1
 " let g:airline_left_sep = '▶'
 " let g:airline_right_sep = '◀'
@@ -177,7 +183,7 @@ let g:airline_symbols.linenr = '␤ '
 let g:airline_symbols.paste = 'ρ'
 
 " vim-jsx syntax
-let g:jsx_ext_required = 0
+" let g:jsx_ext_required = 0
 
 " Case insensitive search
 set ignorecase
