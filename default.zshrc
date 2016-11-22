@@ -12,35 +12,9 @@ ZSH=$HOME/.oh-my-zsh
 # Make sure you symlink this theme from the dotfiles repo first
 ZSH_THEME="justin"
 
-
-### Aliases
-alias l='ls'
-alias la='ls -a'
-alias lah='ls -lah'
-alias zshrc="vim -v ~/.zshrc"
-alias vimrc="vim -v ~/.vimrc"
-alias h='cd ~'
-alias g='git'
-alias gcam='git commit -v -a -m '
-alias gs='git status'
-
-# TMUX
-alias ta='tmux attach -t '
-alias tl='tmux list-sessions'
-alias tn='tmux new -s '
-alias ts='tmux switch -t '
-alias tk='tmux kill-session -t '
-
 # Unix
 # alias u='sudo -u
 # u() { sudo -u "$*" zsh; }
-
-# Create directory tree and cd into last directory
-# Take(n) from kepford
-function take () {
-  mkdir -p "$1"
-  cd "$1"
-}
 
 # OSX
 # alias vim='mvim -v'
@@ -91,3 +65,30 @@ unsetopt correct_all
 
 # Load RVM into a shell session *as a function*
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
+
+### Aliases
+alias l='ls'
+alias la='ls -a'
+alias lah='ls -lah'
+alias zshrc="vim -v ~/.zshrc"
+alias vimrc="vim -v ~/.vimrc"
+alias h='cd ~'
+alias g='git'
+alias gcam='git commit -v -a -m '
+alias gs='git status'
+
+# TMUX
+alias ta='tmux attach -t '
+alias tl='tmux list-sessions'
+alias tn='tmux new -s '
+alias ts='tmux switch -t '
+alias tk='tmux kill-session -t '
+
+# Create directory tree and cd into last directory
+# Take(n) from kepford
+function take () {
+  mkdir -p "$1"
+  cd "$1"
+}
+
+
