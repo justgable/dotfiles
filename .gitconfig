@@ -6,7 +6,7 @@
 	branch = auto
 	ui = true
 [core]
-	excludesfile = /Users/justingable/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [alias]
   s = status
   b = branch
