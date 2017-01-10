@@ -76,6 +76,7 @@ alias h='cd ~'
 alias g='git'
 alias gcam='git commit -v -a -m '
 alias gs='git status'
+alias v='vagrant'
 
 # TMUX
 alias ta='tmux attach -t '
