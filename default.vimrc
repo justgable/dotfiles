@@ -200,14 +200,16 @@ imap jj <esc>
 " map <C-k> <C-U>
 
 " Split navigation
+" NOTE: If using NeoVim see URL below for <C-h> bind issues
+" https://github.com/neovim/neovim/issues/2048#issuecomment-98307896
 nmap <C-h> <C-W><C-H>
 nmap <C-j> <C-W><C-J>
 nmap <C-k> <C-W><C-K>
 nmap <C-l> <C-W><C-L>
 
 " Tab cycling
-nmap <C-S-h> :tabprevious<CR>
-nmap <C-S-l> :tabnext<CR>
+" nmap <C-S-h> :tabprevious<CR>
+" nmap <C-S-l> :tabnext<CR>
 
 " Buffer cycling
 nmap <A-S-h> :bprevious<CR>
