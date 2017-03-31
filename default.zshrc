@@ -69,14 +69,17 @@ unsetopt correct_all
 ### Aliases
 alias l='ls'
 alias la='ls -a'
+alias ll='ls -1a'
 alias lah='ls -lah'
 alias zshrc="vim -v ~/.zshrc"
 alias vimrc="vim -v ~/.vimrc"
 alias h='cd ~'
 alias g='git'
 alias gcam='git commit -v -a -m '
-alias gs='git status'
+alias glog='git log --oneline'
+alias gs='git status -sb'
 alias v='vagrant'
+alias vex='vagrant exec'
 
 # TMUX
 alias ta='tmux attach -t '
