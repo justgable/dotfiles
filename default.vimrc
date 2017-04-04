@@ -87,7 +87,7 @@ elseif has('nvim')
   set termguicolors
 
 else
-  colorscheme desert
+  colorscheme neon
 endif
 
 if has("autocmd")
