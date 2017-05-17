@@ -1,6 +1,4 @@
-These are my default dotfiles for setting up a new system.
-
-Run these commands on initial setup:
+## Setup
 
     # Set zsh to default shell
     sudo chsh -s /bin/zsh
@@ -8,11 +6,8 @@ Run these commands on initial setup:
     # Install oh-my-zsh (https://github.com/robbyrussell/oh-my-zsh)
     curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
-    # Update all the submodules
-    git submodule foreach git pull
-
-    cp default.zshrc .zshrc
-    cp default.vimrc .vimrc
+    ln -s default.zshrc .zshrc
+    ln -s default.vimrc .vimrc
 
     # Download Vundle to ~/.vim
     mkdir ~/.vim
@@ -21,5 +16,12 @@ Run these commands on initial setup:
 
     # Run Vundle to install vim plugins
     vim +PluginInstall +qall
+
+## Font files
+
+* **Roboto Mono:** https://fonts.google.com/specimen/Roboto+Mono?selection.family=Roboto+Mono
+* **Powerline fonts:** https://github.com/powerline/fonts 
+
+**NOTE:** Sometimes I use Monaco
 
 TODO: Write script to copy and symlink files

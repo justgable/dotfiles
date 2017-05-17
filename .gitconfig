@@ -4,6 +4,8 @@
 [color]
 	status = auto
 	branch = auto
+  # Note: this option can make things slower in large repositories
+  showUntrackedFiles = all
 	ui = true
 [core]
 	excludesfile = ~/.gitignore_global
@@ -14,10 +16,16 @@
   cam = commit -am
   co = checkout
   a = add
+  stash-all = stash save --include-untracked
   df = diff
   l = log
-  lsd = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  lsd = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
   sub = submodule
+[merge]
+  # Ensures that you get an error unless every merge is fast-forward. No merge commits, no joining together of two histories, just a smooth progression from commit to commit.
+  ff = only
+  # Normally you get two sections in a conflict, this provides a 3rd of the original before the merge
+  conflictstyle = diff3
 [push]
 [push]
 	default = matching

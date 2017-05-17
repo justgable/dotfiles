@@ -29,15 +29,20 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'joonty/vdebug'
 Plugin 'tpope/vim-fugitive'
+Plugin 'sjl/vitality.vim'
+Plugin 'mattn/emmet-vim'
 
 " -Syntax & Language
+Plugin 'pangloss/vim-javascript'
 Plugin 'othree/html5-syntax.vim'
 Plugin 'cakebaker/scss-syntax.vim'
 " Plugin 'mxw/vim-jsx'
 Plugin 'tpope/vim-rails'
-Plugin 'evidens/vim-twig'
+Plugin 'lumiliet/vim-twig'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'chrisbra/Colorizer'
+Plugin 'https://git.drupal.org/project/vimrc.git', {'rtp': 'bundle/vim-plugin-for-drupal/'}
+Plugin 'digitaltoad/vim-pug'
 
 " Plugin 'garbas/vim-snipmate'
 Plugin 'wavded/vim-stylus'
@@ -312,7 +317,33 @@ function! s:Repl()
 endfunction
 vmap <silent> <expr> p <sid>Repl()
 
+" vim-javascript settings
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+let g:javascript_plugin_flow = 1
+
 " XDebug settings
-let g:vdebug_options= {
+let g:vdebug_options = {
       \    "ide_key" : 'VIM',
       \}
+
+let g:vdebug_options['path_maps'] = {
+      \ '/var/www/parenttheme/web' : '/Users/justin.gable/Sites/parenttheme/web'
+      \}
+
+" Use the compact window layout. 
+let g:vdebug_options['watch_window_style'] = 'compact'
+
+" Set keybindings
+let g:vdebug_keymap = { 
+      \ "run" : "<Leader>/", 
+      \ "run_to_cursor" : "<Down>", 
+      \ "step_over" : "<Up>", 
+      \ "step_into" : "<Right>", 
+      \ "step_out" : "<Left>", 
+      \ "close" : "q", 
+      \ "detach" : "<F7>", 
+      \ "set_breakpoint" : "<Leader>s", 
+      \ "eval_visual" : "<Leader>e" 
+      \}
+
