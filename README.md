@@ -6,12 +6,14 @@
     # Install oh-my-zsh (https://github.com/robbyrussell/oh-my-zsh)
     curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
-    ln -s default.zshrc .zshrc
-    ln -s default.vimrc .vimrc
+    # Symlink dot files
+    ln -s ~/dotfiles/default.zshrc ~/.zshrc
+    ln -s ~/dotfiles/default.vimrc ~/.vimrc
+    ln -s ~/dotfiles/default.gitconfig ~/.gitconfig
+    ln -s ~/dotfiles/default.gitignore_global ~/.gitignore_global
 
     # Download Vundle to ~/.vim
-    mkdir ~/.vim
-    mkdir ~/.vim/bundle
+    take ~/.vim/bundle
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
     # Run Vundle to install vim plugins
