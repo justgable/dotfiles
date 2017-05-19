@@ -1,7 +1,7 @@
 ## Setup
 
     # Set zsh to default shell
-    sudo chsh -s /bin/zsh
+    chsh -s $(which zsh)
 
     # Install oh-my-zsh (https://github.com/robbyrussell/oh-my-zsh)
     curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
@@ -13,7 +13,8 @@
     ln -s ~/dotfiles/default.gitignore_global ~/.gitignore_global
 
     # Download Vundle to ~/.vim
-    take ~/.vim/bundle
+    mkdir ~/.vim
+    mkdir ~/.vim/bundle
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
     # Run Vundle to install vim plugins
@@ -26,4 +27,4 @@
 
 **NOTE:** Sometimes I use Monaco
 
-TODO: Write script to copy and symlink files
+TODO: Write install.sh to run all of the above commands

@@ -31,6 +31,7 @@ Plugin 'joonty/vdebug'
 Plugin 'tpope/vim-fugitive'
 Plugin 'sjl/vitality.vim'
 Plugin 'mattn/emmet-vim'
+Plugin 'jiangmiao/auto-pairs'
 
 " -Syntax & Language
 Plugin 'pangloss/vim-javascript'
@@ -196,6 +197,9 @@ endif
 
 " Saves time; maps the spacebar to colon
 nmap <space> :
+
+" Omni completion
+imap <C-space> <C-X><C-O>
 
 " Map escape key to jj
 imap jj <esc>
