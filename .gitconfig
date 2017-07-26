@@ -23,7 +23,7 @@
   sub = submodule
 [merge]
   # Ensures that you get an error unless every merge is fast-forward. No merge commits, no joining together of two histories, just a smooth progression from commit to commit.
-  ff = only
+  # ff = only
   # Normally you get two sections in a conflict, this provides a 3rd of the original before the merge
   conflictstyle = diff3
 [push]
