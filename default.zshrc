@@ -80,6 +80,7 @@ alias glog='git log --oneline'
 alias gs='git status -sb'
 alias v='vagrant'
 alias vex='vagrant exec'
+alias gba="git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
 
 # TMUX
 alias ta='tmux attach -t '
