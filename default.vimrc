@@ -37,7 +37,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/html5-syntax.vim'
 Plugin 'cakebaker/scss-syntax.vim'
-" Plugin 'mxw/vim-jsx'
+Plugin 'mxw/vim-jsx'
 Plugin 'tpope/vim-rails'
 Plugin 'lumiliet/vim-twig'
 Plugin 'Glench/Vim-Jinja2-Syntax'
@@ -282,6 +282,9 @@ else
         \ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
         \ }
 endif
+
+" vim-jsx
+let g:jsx_ext_required = 0
 
 " Colorizer
 " Highlight colors by default
