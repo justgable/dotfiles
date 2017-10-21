@@ -14,6 +14,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " -Utilities
 Plugin 'kien/ctrlp.vim'
+Plugin 'junegunn/fzf.vim'
 Plugin 'tmhedberg/matchit'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ervandew/screen'
@@ -32,6 +33,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'sjl/vitality.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'alvan/vim-closetag'
 
 " -Syntax & Language
 Plugin 'pangloss/vim-javascript'
@@ -41,15 +43,18 @@ Plugin 'mxw/vim-jsx'
 Plugin 'tpope/vim-rails'
 Plugin 'lumiliet/vim-twig'
 Plugin 'Glench/Vim-Jinja2-Syntax'
-Plugin 'chrisbra/Colorizer'
+" Plugin 'chrisbra/Colorizer'
 Plugin 'https://git.drupal.org/project/vimrc.git', {'rtp': 'bundle/vim-plugin-for-drupal/'}
 Plugin 'digitaltoad/vim-pug'
+Plugin 'w0ng/vim-hybrid'
+Plugin 'posva/vim-vue'
 
 " Plugin 'garbas/vim-snipmate'
 Plugin 'wavded/vim-stylus'
 " Plugin 'SirVer/ultisnips'
 " Plugin 'honza/vim-snippets'
 Plugin 'scrooloose/syntastic'
+Plugin 'sekel/vim-vue-syntastic'
 
 " -Color
 Plugin 'sjl/badwolf'
@@ -78,19 +83,17 @@ syntax on
 " Color schemes
 set t_Co=256
 
-if has('gui_running')
-  set background=dark
-  colorscheme gruvbox
+if has('nvim') || has('gui_running')
+  colorscheme hybrid
+  let g:hybrid_custom_term_colors = 1
 
-elseif has('mvim')
-  let g:solarized_termcolors=256
+  " Disable if using iTerm reduced contrast colors
+  " See https://github.com/w0ng/vim-hybrid#osx-users-iterm
+  let g:hybrid_reduced_contrast = 1
   set background=dark
-  colorscheme solarized
-
-elseif has('nvim')
-  colorscheme gruvbox
-  set background=dark
-  set termguicolors
+  
+  " Only works well with certain colorschemes like gruvbox
+  " set termguicolors
 
 else
   colorscheme badwolf
@@ -108,6 +111,7 @@ if has("autocmd")
   endif
 
   " Alternate syntax highlights and indentation
+  au BufRead,BufNewFile *.vue set filetype=vue syntax=html
   au BufRead,BufNewFile *.njk set filetype=jinja
   au BufRead,BufNewFile *.scss set filetype=sass
   au FileType c,cpp,objc set tabstop=4 shiftwidth=4 softtabstop=4
@@ -264,8 +268,21 @@ let g:airline_symbols.paste = 'ρ'
 " Allow gruvbox theme to use italics
 let g:gruvbox_italic=1
 
+" Ag settings
+nmap <C-g> :Ag<CR>
+
+" fzf settings
+set rtp+=/usr/local/opt/fzf
+nmap ; :Files<CR>
+nmap <Leader>t :Tags<CR>
+nmap <Leader>r :Buffers<CR>
+
+" Full screen view of fzf
+let g:fzf_layout = { 'window': 'enew' }
+
 " ctrlp settings
-let g:ctrlp_map = ';'
+" TODO: eventually drop ctrlp for fzf.vim
+" let g:ctrlp_map = ';'
 let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py|tmp|[\/](node_modules|target|dist|config_)'
 let g:ctrlp_dotfiles = 0
 let g:ctrlp_switch_buffer = 0
@@ -288,7 +305,10 @@ let g:jsx_ext_required = 0
 
 " Colorizer
 " Highlight colors by default
-let g:colorizer_auto_filetype='scss,css,html'
+" let g:colorizer_auto_filetype='scss,css,html'
+
+" Vim-closetag
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.vue'
 
 " Screen settings
 let g:ScreenImpl = 'Tmux'

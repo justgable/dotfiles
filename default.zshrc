@@ -66,6 +66,20 @@ unsetopt correct_all
 # Load RVM into a shell session *as a function*
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
 
+### Utility functions
+## Create directory tree and cd into last directory
+# Take(n) from kepford
+function take () {
+  mkdir -p "$1"
+  cd "$1"
+}
+
+# Returns whether the given command is executable or aliased.
+# Pulled from https://github.com/statico/dotfiles -- .zshrc
+_has() {
+  return $( whence $1 >/dev/null )
+}
+
 ### Aliases
 alias l='ls'
 alias la='ls -a'
@@ -88,12 +102,5 @@ alias tl='tmux list-sessions'
 alias tn='tmux new -s '
 alias ts='tmux switch -t '
 alias tk='tmux kill-session -t '
-
-# Create directory tree and cd into last directory
-# Take(n) from kepford
-function take () {
-  mkdir -p "$1"
-  cd "$1"
-}
 
 
