@@ -22,9 +22,8 @@
 
 ## Font files
 
+* **FiraCode:** https://github.com/tonsky/FiraCode
 * **Roboto Mono:** https://fonts.google.com/specimen/Roboto+Mono?selection.family=Roboto+Mono
 * **Powerline fonts:** https://github.com/powerline/fonts 
-
-**NOTE:** Sometimes I use Monaco
 
 TODO: Write install.sh to run all of the above commands
