@@ -82,18 +82,19 @@ syntax on
 
 " Color schemes
 set t_Co=256
-
-if has('nvim') || has('gui_running')
-  colorscheme hybrid
-  let g:hybrid_custom_term_colors = 1
-
+if has('gui_running')
+  set background=dark
+  colorscheme gruvbox
+elseif has('nvim') 
   " Disable if using iTerm reduced contrast colors
   " See https://github.com/w0ng/vim-hybrid#osx-users-iterm
   let g:hybrid_reduced_contrast = 1
+  let g:hybrid_custom_term_colors = 1
   set background=dark
   
   " Only works well with certain colorschemes like gruvbox
-  " set termguicolors
+  set termguicolors
+  colorscheme hybrid
 
 else
   colorscheme badwolf
@@ -278,7 +279,7 @@ nmap <Leader>t :Tags<CR>
 nmap <Leader>r :Buffers<CR>
 
 " Full screen view of fzf
-let g:fzf_layout = { 'window': 'enew' }
+" let g:fzf_layout = { 'window': 'enew' }
 
 " ctrlp settings
 " TODO: eventually drop ctrlp for fzf.vim
@@ -316,22 +317,22 @@ let g:ScreenShellTmuxInitArgs = '-2'
 let g:ScreenShellInitialFocus = 'shell'
 let g:ScreenShellQuitOnVimExit = 0
 
-" map <F5> :ScreenShellVertical<CR>
-command -nargs=? -complete=shellcmd W  :w | :call ScreenShellSend("load '".@%."';")
-map <Leader>r :w<CR> :call ScreenShellSend("rspec ".@% . ':' . line('.'))<CR>
-map <Leader>e :w<CR> :call ScreenShellSend("cucumber --format=pretty ".@% . ':' . line('.'))<CR>
-map <Leader>b :w<CR> :call ScreenShellSend("break ".@% . ':' . line('.'))<CR>
-
-" Joel's suggested screen settings
-nnoremap <leader>ssv :ScreenShellVertical<cr>
-nnoremap <leader>ssr :ScreenShellReopen<cr>
-nnoremap <leader>ssq :ScreenQuit<cr>
-nnoremap <leader>sss :ScreenSend<cr>
-
-" Send the current line.
-nnoremap <leader>ssl :call ScreenShellSend(getline("."))<cr>
-" Send the whole file (line by line)
-nnoremap <leader>ssf :call ScreenShellSend(getline(1, "$"))<cr>
+" " map <F5> :ScreenShellVertical<CR>
+" command -nargs=? -complete=shellcmd W  :w | :call ScreenShellSend("load '".@%."';")
+" map <Leader>r :w<CR> :call ScreenShellSend("rspec ".@% . ':' . line('.'))<CR>
+" map <Leader>e :w<CR> :call ScreenShellSend("cucumber --format=pretty ".@% . ':' . line('.'))<CR>
+" map <Leader>b :w<CR> :call ScreenShellSend("break ".@% . ':' . line('.'))<CR>
+"
+" " Joel's suggested screen settings
+" nnoremap <leader>ssv :ScreenShellVertical<cr>
+" nnoremap <leader>ssr :ScreenShellReopen<cr>
+" nnoremap <leader>ssq :ScreenQuit<cr>
+" nnoremap <leader>sss :ScreenSend<cr>
+"
+" " Send the current line.
+" nnoremap <leader>ssl :call ScreenShellSend(getline("."))<cr>
+" " Send the whole file (line by line)
+" nnoremap <leader>ssf :call ScreenShellSend(getline(1, "$"))<cr>
 
 " vp doesn't replace paste buffer
 function! RestoreRegister()
@@ -355,7 +356,8 @@ let g:vdebug_options = {
       \}
 
 let g:vdebug_options['path_maps'] = {
-      \ '/var/www/parenttheme/web' : '/Users/justin.gable/Sites/parenttheme/web'
+      \ '/var/www/parenttheme/web' : '/Users/justin.gable/Sites/parenttheme/web',
+      \ '/var/www/d8-news/docroot' : '/Users/justin.gable/Sites/d8-news/docroot'
       \}
 
 " Use the compact window layout. 
