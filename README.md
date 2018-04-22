@@ -9,11 +9,9 @@
     mkdir ~/.vim/bundle
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     
-    # Run Vundle to install vim plugins
-    vim +PluginInstall +qall
-    
-    # Link .vimrc
+    # Link .vimrc & run Vundle to install vim plugins
     ln -s ~/dotfiles/default.vimrc ~/.vimrc
+    vim +PluginInstall +qall
     
     # Set zsh to default shell
     chsh -s $(which zsh);
