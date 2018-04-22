@@ -103,4 +103,5 @@ alias tn='tmux new -s '
 alias ts='tmux switch -t '
 alias tk='tmux kill-session -t '
 
-
+export EDITOR='vim'
+source ~/.bin/tmuxinator.zsh
