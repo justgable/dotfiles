@@ -10,10 +10,10 @@
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     
     # Link .vimrc & run Vundle to install vim plugins
-    ln -s ~/dotfiles/default.vimrc ~/.vimrc
-    vim +PluginInstall +qall
+    ln -s ~/dotfiles/.vimrc ~/.vimrc
+    vim +PluginInstal
     
-    # Set zsh to default shell
+    # Set zsh to defall
     chsh -s $(which zsh);
 
     # Install oh-my-zsh (https://github.com/robbyrussell/oh-my-zsh)
@@ -23,14 +23,18 @@
     cp ~/dotfiles/oh-my-zsh/custom/justin.zsh-theme ~/.oh-my-zsh/custom/
 
     # Finish up dotfiles setup
-    echo 'source ~/dotfiles/default.zshrc' > ~/.zshrc
-    ln -s ~/dotfiles/default.gitconfig ~/.gitconfig
-    ln -s ~/dotfiles/default.gitignore_global ~/.gitignore_global
-    ln -s ~/dotfiles/default.screenrc ~/.screenrc
+    echo 'source ~/dotfiles/.zshrc' > ~/.zshrc
+    ln -s ~/dotfiles/.gitconfig ~/.gitconfig
+    ln -s ~/dotfiles/.gitignore_global ~/.gitignore_global
+    ln -s ~/dotfiles/.screenrc ~/.screenrc
+    ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
     
     # Install RVM & latest version of Ruby (for Tmuxinator)
     gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
     curl -sSL https://get.rvm.io | bash -s stable
+
+    # Install Tmux Plugin Manager
+    take ~/.tmux/plugins; git clone https://github.com/tmux-plugins/tpm
     
     # Install Tmuxinator
     gem install tmuxinator
