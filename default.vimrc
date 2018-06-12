@@ -40,7 +40,6 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'othree/html5-syntax.vim'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'mxw/vim-jsx'
-Plugin 'tpope/vim-rails'
 Plugin 'lumiliet/vim-twig'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 " Plugin 'chrisbra/Colorizer'
@@ -50,7 +49,6 @@ Plugin 'w0ng/vim-hybrid'
 Plugin 'posva/vim-vue'
 
 " Plugin 'garbas/vim-snipmate'
-Plugin 'wavded/vim-stylus'
 " Plugin 'SirVer/ultisnips'
 " Plugin 'honza/vim-snippets'
 Plugin 'scrooloose/syntastic'
@@ -169,7 +167,7 @@ set wildmode=longest,list
 set cursorline
 
 " Copy to system clipboard
-set clipboard=unnamed
+" set clipboard=unnamed
 
 let mapleader=","
 
@@ -304,10 +302,6 @@ endif
 " vim-jsx
 let g:jsx_ext_required = 0
 
-" Colorizer
-" Highlight colors by default
-" let g:colorizer_auto_filetype='scss,css,html'
-
 " Vim-closetag
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.vue'
 
@@ -316,23 +310,6 @@ let g:ScreenImpl = 'Tmux'
 let g:ScreenShellTmuxInitArgs = '-2'
 let g:ScreenShellInitialFocus = 'shell'
 let g:ScreenShellQuitOnVimExit = 0
-
-" " map <F5> :ScreenShellVertical<CR>
-" command -nargs=? -complete=shellcmd W  :w | :call ScreenShellSend("load '".@%."';")
-" map <Leader>r :w<CR> :call ScreenShellSend("rspec ".@% . ':' . line('.'))<CR>
-" map <Leader>e :w<CR> :call ScreenShellSend("cucumber --format=pretty ".@% . ':' . line('.'))<CR>
-" map <Leader>b :w<CR> :call ScreenShellSend("break ".@% . ':' . line('.'))<CR>
-"
-" " Joel's suggested screen settings
-" nnoremap <leader>ssv :ScreenShellVertical<cr>
-" nnoremap <leader>ssr :ScreenShellReopen<cr>
-" nnoremap <leader>ssq :ScreenQuit<cr>
-" nnoremap <leader>sss :ScreenSend<cr>
-"
-" " Send the current line.
-" nnoremap <leader>ssl :call ScreenShellSend(getline("."))<cr>
-" " Send the whole file (line by line)
-" nnoremap <leader>ssf :call ScreenShellSend(getline(1, "$"))<cr>
 
 " vp doesn't replace paste buffer
 function! RestoreRegister()
