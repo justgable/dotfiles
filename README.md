@@ -35,6 +35,7 @@
 
     # Install Tmux Plugin Manager
     take ~/.tmux/plugins; git clone https://github.com/tmux-plugins/tpm
+    # Press `prefix` + `I` to install plugins
     
     # Install Tmuxinator
     gem install tmuxinator
