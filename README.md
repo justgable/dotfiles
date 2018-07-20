@@ -4,16 +4,11 @@
     sudo apt-get update && sudo apt-get upgrade
     sudo apt-get install git vim zsh tmux
     
-    # Download Vundle to ~/.vim
-    mkdir ~/.vim
-    mkdir ~/.vim/bundle
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    
-    # Link .vimrc & run Vundle to install vim plugins
+    # Link .vimrc & run vim-plug to install vim plugins
     ln -s ~/dotfiles/.vimrc ~/.vimrc
-    vim +PluginInstal
+    vim +PlugInstall
     
-    # Set zsh to defall
+    # Set zsh to default
     chsh -s $(which zsh);
 
     # Install oh-my-zsh (https://github.com/robbyrussell/oh-my-zsh)
