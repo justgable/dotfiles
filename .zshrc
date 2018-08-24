@@ -1,4 +1,6 @@
-### General oh-my-zsh settings
+# -------
+# General oh-my-zsh settings
+# -------
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
@@ -12,19 +14,15 @@ ZSH=$HOME/.oh-my-zsh
 # Make sure you symlink this theme from the dotfiles repo first
 ZSH_THEME="justin"
 
+# -------
 # Unix
+# -------
 # alias u='sudo -u
 # u() { sudo -u "$*" zsh; }
 
-# OSX
-# alias vim='mvim -v'
-# alias av='vim /www/httpd-vhosts.conf'
-# alias wr='cd ~/www'
-# alias wl='cd ~/wasteland'
-# alias pear="php /usr/lib/php/pear/pearcmd.php" 
-# alias pecl="php /usr/lib/php/pear/peclcmd.php" 
-
-### Default zsh settings
+# ------
+# Default zsh settings
+# ------
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -46,27 +44,22 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Useful plugins (git ruby rails osx)
-plugins=(git ruby rails)
+plugins=(git)
 
-### PATHS
+# -------
+# PATHS
+# -------
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
-# Customize to your needs...
+# Use this as a starting point for $PATH in .zshrc
 # export PATH=/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/share/npm/bin
 
-# For homebrew apps to use non-homebrew Python
-# export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
-# export PYTHONPATH=/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7:$PYTHONPATH
+# -------
+# Utility functions
+# -------
 
-# Add RVM to PATH for scripting
-# PATH=$PATH:$HOME/.rvm/bin:$HOME/.rvm/gems/ruby-2.0.0-p247@global 
-
-# Load RVM into a shell session *as a function*
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
-
-### Utility functions
 ## Create directory tree and cd into last directory
 # Take(n) from kepford
 function take () {
@@ -80,7 +73,9 @@ _has() {
   return $( whence $1 >/dev/null )
 }
 
-### Aliases
+# -------
+# Aliases
+# -------
 alias l='ls'
 alias la='ls -a'
 alias ll='ls -1a'
@@ -92,16 +87,26 @@ alias g='git'
 alias gcam='git commit -v -a -m '
 alias glog='git log --oneline'
 alias gs='git status -sb'
-alias v='vagrant'
-alias vex='vagrant exec'
 alias gba="git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
 
+# -------
 # TMUX
+# -------
 alias ta='tmux attach -t '
 alias tl='tmux list-sessions'
 alias tn='tmux new -s '
 alias ts='tmux switch -t '
 alias tk='mux stop '
 
+# Load tmuxinator alias file
+BIN_DIR="${HOME}/.bin"
+if [ -f "$BIN_DIR/tmuxinator.zsh" ]; then
+  source ${BIN_DIR}/tmuxinator.zsh
+else
+  echo >&2 "NOTICE: ${BIN_DIR}/tmuxinator.zsh is missing"
+fi
+
+# -------
+# vim
+# -------
 export EDITOR='vim'
-source ~/.bin/tmuxinator.zsh

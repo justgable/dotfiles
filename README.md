@@ -24,6 +24,10 @@
 
     # Finish up dotfiles setup
     echo 'source ~/dotfiles/.zshrc' > ~/.zshrc
+    
+    # Add OS specific zsh config
+    echo 'source ~/dotfiles/.zshrc.osx' >> ~/.zshrc
+
     ln -s ~/dotfiles/.gitconfig ~/.gitconfig
     ln -s ~/dotfiles/.gitignore_global ~/.gitignore_global
     ln -s ~/dotfiles/.screenrc ~/.screenrc

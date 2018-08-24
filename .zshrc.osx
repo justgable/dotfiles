@@ -1,0 +1,90 @@
+# -------
+# Vagrant
+# -------
+if _has vagrant; then
+  alias v='vagrant'
+
+  ## vagrant halt all
+  vagrant() {
+    if [[ $@ == "halt all" ]]; then
+      command vagrant global-status | grep running | colrm 8 | xargs -L 1 -t vagrant halt
+    else
+      command vagrant "$@"
+    fi
+  }
+fi
+
+# -------
+# neovim
+# -------
+if _has nvim; then
+  alias vim='nvim'
+  export EDITOR="nvim"
+else
+  echo >&2 "NOTICE: neovim is not installed"
+fi 
+
+# -------
+# bat: https://github.com/sharkdp/bat
+# -------
+if _has bat; then
+  alias cat='bat'
+else
+  echo >&2 "NOTICE: bat is not installed"
+fi
+
+# -------
+# prettyping:  https://github.com/denilsonsa/prettyping
+# -------
+if _has bat; then
+  alias ping='prettyping --nolegend'
+else
+  echo >&2 "NOTICE: prettyping is not installed"
+fi
+
+# -------
+# nvm 
+# -------
+export NVM_DIR=~/.nvm
+. $NVM_DIR/nvm.sh
+
+# -------
+# tmuxinator
+# -------
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+
+# -------
+# fzf 
+# -------
+if _has fzf; then
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+  ## fzf + vim: https://statico.github.io/vim3.html
+  if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
+    source /usr/local/opt/fzf/shell/key-bindings.zsh
+    source /usr/local/opt/fzf/shell/completion.zsh
+  fi
+else
+  echo >&2 "NOTICE: fzf is not installed" 
+fi
+
+if _has fzf && _has bat; then
+  alias preview="fzf --preview 'bat --color \"always\" {}'"
+  FZF_DEFAULT_OPTS="--bind 'ctrl-y:execute-silent(echo {} | pbcopy)+abort'"
+fi
+
+## fzf + ag
+if _has fzf && _has ag; then
+  export FZF_DEFAULT_COMMAND='ag --nocolor -g ""'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+  export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
+  export FZF_DEFAULT_OPTS='
+  --color fg:242,bg:236,hl:65,fg+:15,bg+:239,hl+:108
+  --color info:108,prompt:109,spinner:108,pointer:168,marker:168
+  '
+fi
+
+# -------
+# RVM: https://rvm.io/
+# -------
+export PATH="$PATH:$HOME/.rvm/bin"
