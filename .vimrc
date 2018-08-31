@@ -25,10 +25,8 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " -Utilities
-Plug 'kien/ctrlp.vim'
 Plug 'junegunn/fzf.vim'
 Plug 'tmhedberg/matchit'
-Plug 'scrooloose/nerdtree'
 Plug 'ervandew/screen'
 Plug 'godlygeek/tabular'
 Plug 'tomtom/tcomment_vim'
@@ -41,11 +39,11 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'sjl/vitality.vim'
-Plug 'mattn/emmet-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
 Plug 'joonty/vdebug'
 Plug 'jremmen/vim-ripgrep'
+Plug 'airblade/vim-gitgutter'
 
 " -Syntax & Language
 Plug 'pangloss/vim-javascript'
@@ -59,10 +57,6 @@ Plug 'https://git.drupal.org/project/vimrc.git', {'rtp': 'bundle/vim-plugin-for-
 Plug 'digitaltoad/vim-pug'
 Plug 'w0ng/vim-hybrid'
 Plug 'posva/vim-vue'
-
-" Plug 'garbas/vim-snipmate'
-" Plug 'SirVer/ultisnips'
-" Plug 'honza/vim-snippets'
 Plug 'scrooloose/syntastic'
 Plug 'sekel/vim-vue-syntastic'
 
@@ -201,6 +195,9 @@ if has("gui_running")
 	set guioptions=aiA
 endif 
 
+" Set update time from default 4000ms
+set updatetime=100
+
 "=============================================================================
 "
 "  KEY BINDS
@@ -245,6 +242,9 @@ map q: :q
 "  PLUGIN SETTINGS
 "
 "=============================================================================
+" GitGutter https://github.com/airblade/vim-gitgutter
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_grep = 'ag'
 
 " avoiding annoying CSApprox warning message
 let g:CSApprox_verbose_level = 0
