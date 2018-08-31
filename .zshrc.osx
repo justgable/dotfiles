@@ -30,7 +30,7 @@ fi
 if _has bat; then
   alias cat='bat'
 else
-  echo >&2 "NOTICE: bat is not installed"
+  echo >&2 "NOTICE: bat is not installed run `brew install bat`"
 fi
 
 # -------
@@ -39,7 +39,7 @@ fi
 if _has bat; then
   alias ping='prettyping --nolegend'
 else
-  echo >&2 "NOTICE: prettyping is not installed"
+  echo >&2 "NOTICE: prettyping is not installed run `brew install prettyping`"
 fi
 
 # -------
@@ -54,6 +54,24 @@ export NVM_DIR=~/.nvm
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 # -------
+# ncdu: https://dev.yorhel.nl/ncdu 
+# -------
+if _has ncdu; then
+  alias du="ncdu --color dark"
+else
+  echo >&2 "NOTICE: ncdu is not installed run `brew install ncdu`"
+fi
+
+# -------
+# tldr: https://tldr.sh/
+# -------
+if _has tldr; then
+  alias help="tldr"
+else
+  echo >&2 "NOTICE: tldr is not installed run `brew install tldr`"
+fi
+
+# -------
 # fzf 
 # -------
 if _has fzf; then
@@ -65,7 +83,7 @@ if _has fzf; then
     source /usr/local/opt/fzf/shell/completion.zsh
   fi
 else
-  echo >&2 "NOTICE: fzf is not installed" 
+  echo >&2 "NOTICE: fzf is not installed run `brew install fzf` and `$(brew --prefix)/opt/fzf/install`" 
 fi
 
 if _has fzf && _has bat; then
@@ -74,7 +92,12 @@ if _has fzf && _has bat; then
 fi
 
 ## fzf + ag
-if _has fzf && _has ag; then
+if _has fzf && _has rg; then
+  export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+  export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
+
+elif _has fzf && _has ag; then
   export FZF_DEFAULT_COMMAND='ag --nocolor -g ""'
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
   export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"

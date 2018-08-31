@@ -32,8 +32,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'ervandew/screen'
 Plug 'godlygeek/tabular'
 Plug 'tomtom/tcomment_vim'
-Plug 'vim-scripts/tlib'
-Plug 'tomtom/tlib_vim.git'
+Plug 'tomtom/tlib_vim'
 Plug 'zaiste/tmux.vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'bling/vim-airline'
@@ -46,6 +45,7 @@ Plug 'mattn/emmet-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
 Plug 'joonty/vdebug'
+Plug 'jremmen/vim-ripgrep'
 
 " -Syntax & Language
 Plug 'pangloss/vim-javascript'
@@ -228,10 +228,6 @@ nmap <C-j> <C-W><C-J>
 nmap <C-k> <C-W><C-K>
 nmap <C-l> <C-W><C-L>
 
-" Tab cycling
-" nmap <C-S-h> :tabprevious<CR>
-" nmap <C-S-l> :tabnext<CR>
-
 " Buffer cycling
 nmap <A-S-h> :bprevious<CR>
 nmap <A-S-l> :bnext<CR>
@@ -276,37 +272,18 @@ let g:airline_symbols.paste = 'ρ'
 " Allow gruvbox theme to use italics
 let g:gruvbox_italic=1
 
-" Ag settings
-nmap <C-g> :Ag<CR>
+" Rg settings
+nmap <C-g> :Find<CR>
+set grepprg=rg\ --vimgrep
+
+" :Find use rg; pulled from https://medium.com/@crashybang/supercharge-vim-with-fzf-and-ripgrep-d4661fc853d2
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
 " fzf settings
 set rtp+=/usr/local/opt/fzf
 nmap ; :Files<CR>
 nmap <Leader>t :Tags<CR>
 nmap <Leader>r :Buffers<CR>
-
-" Full screen view of fzf
-" let g:fzf_layout = { 'window': 'enew' }
-
-" ctrlp settings
-" TODO: eventually drop ctrlp for fzf.vim
-" let g:ctrlp_map = ';'
-let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py|tmp|[\/](node_modules|target|dist|config_)'
-let g:ctrlp_dotfiles = 0
-let g:ctrlp_switch_buffer = 0
-
-" use Git project for autocompletion
-let g:ctrlp_use_caching = 0
-if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-else
-  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
-  let g:ctrlp_prompt_mappings = {
-        \ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
-        \ }
-endif
 
 " vim-jsx
 let g:jsx_ext_required = 0
