@@ -50,6 +50,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'othree/html5-syntax.vim'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'mxw/vim-jsx'
+Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'lumiliet/vim-twig'
 Plug 'Glench/Vim-Jinja2-Syntax'
 " Plug 'chrisbra/Colorizer'
@@ -95,7 +96,8 @@ elseif has('nvim')
   
   " Only works well with certain colorschemes like gruvbox
   set termguicolors
-  colorscheme hybrid
+  " colorscheme hybrid
+  colorscheme gruvbox
 
 else
   colorscheme badwolf
@@ -274,10 +276,10 @@ let g:gruvbox_italic=1
 
 " Rg settings
 nmap <C-g> :Find<CR>
-set grepprg=rg\ --vimgrep
+set grepprg=rg\ --vimgrep\ --ignore\ --glob "!node_modules/*"\ --glob "!bower_components/*"
 
 " :Find use rg; pulled from https://medium.com/@crashybang/supercharge-vim-with-fzf-and-ripgrep-d4661fc853d2
-command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --glob "!node_modules/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
 " fzf settings
 set rtp+=/usr/local/opt/fzf
