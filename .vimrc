@@ -267,9 +267,12 @@ let g:syntastic_php_phpcs_args = "--standard=Drupal"
 
 " Airline settings
 let g:airline_symbols = {}
-let g:airline_powerline_fonts=1
+let g:airline_powerline_fonts=0
 let g:airline_symbols.linenr = '␤ '
 let g:airline_symbols.paste = 'ρ'
+" let g:airline_section_a = airline#section#create(['mode'])
+let g:airline_section_y = ''
+let g:airline_section_z = ''
 
 " Allow gruvbox theme to use italics
 let g:gruvbox_italic=1
