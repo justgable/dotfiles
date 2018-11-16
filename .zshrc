@@ -12,7 +12,9 @@ ZSH=$HOME/.oh-my-zsh
 # ZSH_THEME="robbyrussell"
 
 # Make sure you symlink this theme from the dotfiles repo first
-ZSH_THEME="justin"
+# ZSH_THEME="justin" # Loved it for long time
+# ZSH_THEME="avit" # Good minimalist
+ZSH_THEME="justin.bureau" # Good info
 
 # -------
 # Unix
@@ -44,7 +46,11 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Useful plugins (git ruby rails osx)
-plugins=(git)
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  plugins=(git osx brew jsontools web-search)
+else
+  plugins=(git jsontools)
+fi
 
 # -------
 # PATHS

@@ -2564,15 +2564,15 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>905 121 445 77 0 0 1440 877 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>974 -534 698 389 603 -900 1440 877 </string>
+	<string>974 -517 698 389 603 -900 1440 900 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>761 -553 928 394 603 -900 1440 877 </string>
+	<string>350 435 928 394 0 0 2560 1417 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>99 293 592 584 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>603 -900 1440 877 603 -900 1440 877 </string>
+	<string>603 -1056 1440 1056 603 -900 1440 900 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -5987,13 +5987,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.17255082726478577</real>
+				<real>0.16470588235294117</real>
 				<key>Color Space</key>
-				<string>Calibrated</string>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.17254787683486938</real>
+				<real>0.6588235294117647</real>
 				<key>Red Component</key>
-				<real>0.17255303263664246</real>
+				<real>0.87450980392156863</real>
 			</dict>
 			<key>Cursor Guide Color</key>
 			<dict>
@@ -6560,6 +6560,8 @@
 			<true/>
 			<key>Use Canonical Parser</key>
 			<false/>
+			<key>Use Cursor Guide</key>
+			<false/>
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Use Non-ASCII Font</key>
@@ -6697,7 +6699,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-11-12T21:03:20Z</date>
+	<date>2018-11-13T21:31:48Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -6763,7 +6765,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.2.6beta2</string>
+	<string>3.2.6beta3</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
