@@ -1,1 +1,8 @@
+# Change Ctrl-a to Ctrl-b
 escape ^Bb
+
+# Autodetach session on hangup instead of terminating screen completely
+autodetach on
+
+# Turn off the splash screen
+startup_message off 
