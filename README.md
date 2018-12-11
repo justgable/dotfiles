@@ -48,4 +48,8 @@
 * **Roboto Mono:** https://fonts.google.com/specimen/Roboto+Mono?selection.family=Roboto+Mono
 * **Powerline fonts:** https://github.com/powerline/fonts 
 
-TODO: Write install.sh to run all of the above commands
+##TODO
+
+* Write platform specific settings for ZSH & Vim (OSX, Windows, Linux desktop, Linux server)
+* Update instructions
+* Write install.sh to run all of the above commands
