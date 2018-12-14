@@ -64,6 +64,7 @@ Plug 'styled-components/vim-styled-components'
 Plug 'hail2u/vim-css3-syntax'
 
 " -Color
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'sjl/badwolf'
 Plug 'godlygeek/csapprox'
 Plug 'vim-scripts/ScrollColors'
@@ -92,14 +93,13 @@ if has('gui_running')
 elseif has('nvim') 
   " Disable if using iTerm reduced contrast colors
   " See https://github.com/w0ng/vim-hybrid#osx-users-iterm
-  let g:hybrid_reduced_contrast = 1
-  let g:hybrid_custom_term_colors = 1
-  set background=dark
+  " let g:hybrid_reduced_contrast = 1
+  " let g:hybrid_custom_term_colors = 1
   
   " Only works well with certain colorschemes like gruvbox
   set termguicolors
-  " colorscheme hybrid
-  colorscheme gruvbox
+  colorscheme dracula
+  set background=dark
 
 else
   colorscheme badwolf

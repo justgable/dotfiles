@@ -48,6 +48,11 @@
 * **Roboto Mono:** https://fonts.google.com/specimen/Roboto+Mono?selection.family=Roboto+Mono
 * **Powerline fonts:** https://github.com/powerline/fonts 
 
+## Themes
+
+* Gruvbox: [Vim](https://github.com/morhetz/gruvbox) [iTerm](https://github.com/herrbischoff/iterm2-gruvbox)
+* [Dracula](https://draculatheme.com/)
+
 ##TODO
 
 * Write platform specific settings for ZSH & Vim (OSX, Windows, Linux desktop, Linux server)
