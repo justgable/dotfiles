@@ -1,0 +1,44 @@
+# .ansiweatherrc example showing all available options
+
+#api_key:85a4e3c55b73909f42c6a23ec35b7147
+#fetch_cmd:curl -sf
+location:Fresno,CA,USA
+units:imperial
+forecast:0
+ansi:false
+symbols:true
+show_uvi:false
+show_wind:true
+show_humidity:false
+show_pressure:false
+show_daylight:false
+#dateformat:%a %b %d
+#timeformat:%b %d %r
+
+# Text and Colors
+#background:\033[44m
+#text:
+#data:\033[33;1m
+delimiter:\033[35m
+dashes:\033[34m |
+#forecast_text:forecast
+greeting_text: 
+#humidity_text:Humidity
+#pressure_text:Pressure
+#sunrise_text:瀞
+#sunset_text:漢
+#wind_directions:N NNE NE ENE E ESE SE SSE S SSW SW WSW W WNW NW NNW
+wind_directions:               
+wind_text:
+## Arrows:        
+
+# Icons requires NerdFonts
+sun:
+moon:
+clouds:
+rain:
+fog:
+mist:
+haze:
+snow:
+thunderstorm:
