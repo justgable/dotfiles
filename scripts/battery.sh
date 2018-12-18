@@ -1,9 +1,11 @@
 #!/bin/bash
 # Returns the value of the battery charge on MacOS
-BATT="$(pmset -g batt | grep -E "[0-9]{2,3}%" | awk 'NR==1{print$3}' | cut -c 1-3)"
+BATT="$(pmset -g batt | grep -E "[0-9]{2,3}%" | awk 'NR==1{print$3}' | sed 's/%;$//')"
 
 FULL=""
+TQTR=""
 HALF=""
+OQTR=""
 EMPTY=""
 
 if [ "$BATT" -ge 91 ]; then
