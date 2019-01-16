@@ -46,6 +46,7 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'airblade/vim-gitgutter'
 
 " -Syntax & Language
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'pangloss/vim-javascript'
 Plug 'othree/html5-syntax.vim'
 Plug 'cakebaker/scss-syntax.vim'
@@ -246,6 +247,19 @@ map q: :q
 "  PLUGIN SETTINGS
 "
 "=============================================================================
+" vim-prettier
+" Running before saving sync
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html Prettier
+
+" Make vim-prettier work like default prettier
+let g:prettier#config#single_quote = 'false'
+let g:prettier#config#bracket_spacing = 'true'
+let g:prettier#config#jsx_bracket_same_line = 'false'
+let g:prettier#config#arrow_parens = 'avoid'
+let g:prettier#config#trailing_comma = 'none'
+let g:prettier#config#parser = 'babylon'
+
 " GitGutter https://github.com/airblade/vim-gitgutter
 let g:gitgutter_sign_added = '+'
 let g:gitgutter_grep = 'ag'
@@ -296,7 +310,7 @@ nmap <Leader>r :Buffers<CR>
 let g:jsx_ext_required = 0
 
 " Vim-closetag
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.vue'
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.vue,*.jsx'
 
 " Screen settings
 let g:ScreenImpl = 'Tmux'
