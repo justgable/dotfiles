@@ -46,6 +46,7 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'airblade/vim-gitgutter'
 
 " -Syntax & Language
+Plug 'mattn/emmet-vim'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'pangloss/vim-javascript'
 Plug 'othree/html5-syntax.vim'
@@ -59,8 +60,9 @@ Plug 'https://git.drupal.org/project/vimrc.git', {'rtp': 'bundle/vim-plugin-for-
 Plug 'digitaltoad/vim-pug'
 Plug 'w0ng/vim-hybrid'
 Plug 'posva/vim-vue'
-Plug 'scrooloose/syntastic'
-Plug 'sekel/vim-vue-syntastic'
+" Plug 'scrooloose/syntastic'
+" Plug 'sekel/vim-vue-syntastic'
+Plug 'w0rp/ale'
 Plug 'styled-components/vim-styled-components'
 Plug 'hail2u/vim-css3-syntax'
 
@@ -247,13 +249,29 @@ map q: :q
 "  PLUGIN SETTINGS
 "
 "=============================================================================
+" ALE settings
+let g:ale_sign_error = '●' " Less aggressive than the default '>>'
+let g:ale_sign_warning = '.'
+let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
+
+" emmet-vim
+" let g:user_emmet_leader_key='<Tab>'
+let g:user_emmet_settings = {
+  \  'javascript.jsx' : {
+    \      'extends' : 'jsx',
+    \  },
+  \}
+
 " vim-prettier
-" Running before saving sync
+" " disable error window
+let g:prettier#quickfix_enabled = 0
+
+" " Running before saving sync
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html Prettier
 
 " Make vim-prettier work like default prettier
-let g:prettier#config#single_quote = 'false'
+let g:prettier#config#single_quote = 'true'
 let g:prettier#config#bracket_spacing = 'true'
 let g:prettier#config#jsx_bracket_same_line = 'false'
 let g:prettier#config#arrow_parens = 'avoid'
@@ -268,18 +286,18 @@ let g:gitgutter_grep = 'ag'
 let g:CSApprox_verbose_level = 0
 
 " Syntastic settings (recommended)
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 2
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-" " php settings
-let g:syntastic_php_checkers = ['php', 'phpcs']
-let g:syntastic_php_phpcs_args = "--standard=Drupal"
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+"
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 2
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+"
+" " " php settings
+" let g:syntastic_php_checkers = ['php', 'phpcs']
+" let g:syntastic_php_phpcs_args = "--standard=Drupal"
 
 " Airline settings
 let g:airline_symbols = {}
