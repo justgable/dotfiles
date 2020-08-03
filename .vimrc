@@ -25,6 +25,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " -Utilities
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'tmhedberg/matchit'
 Plug 'ervandew/screen'
@@ -317,7 +318,7 @@ nmap <C-g> :Find<CR>
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --glob "!node_modules/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
 " fzf settings
-set rtp+=/usr/local/opt/fzf
+set rtp+=system("which fzf")
 nmap ; :Files<CR>
 nmap <Leader>t :Tags<CR>
 nmap <Leader>r :Buffers<CR>
