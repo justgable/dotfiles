@@ -103,6 +103,8 @@ elseif has('nvim')
   set termguicolors
   colorscheme dracula
   set background=dark
+  " Sets bg to transparent to use terminal background color
+  hi Normal guibg=NONE ctermbg=NONE
 
 else
   colorscheme badwolf
@@ -264,19 +266,19 @@ let g:user_emmet_settings = {
 
 " vim-prettier
 " " disable error window
-let g:prettier#quickfix_enabled = 0
+" let g:prettier#quickfix_enabled = 0
 
 " " Running before saving sync
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html Prettier
-
+" let g:prettier#autoformat = 0
+" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html Prettier
+"
 " Make vim-prettier work like default prettier
-let g:prettier#config#single_quote = 'true'
-let g:prettier#config#bracket_spacing = 'true'
-let g:prettier#config#jsx_bracket_same_line = 'false'
-let g:prettier#config#arrow_parens = 'avoid'
-let g:prettier#config#trailing_comma = 'none'
-let g:prettier#config#parser = 'babylon'
+" let g:prettier#config#single_quote = 'true'
+" let g:prettier#config#bracket_spacing = 'true'
+" let g:prettier#config#jsx_bracket_same_line = 'false'
+" let g:prettier#config#arrow_parens = 'avoid'
+" let g:prettier#config#trailing_comma = 'none'
+" let g:prettier#config#parser = 'babylon'
 
 " GitGutter https://github.com/airblade/vim-gitgutter
 let g:gitgutter_sign_added = '+'
@@ -314,7 +316,8 @@ let g:gruvbox_italic=1
 " Rg settings
 nmap <C-g> :Find<CR>
 " :Find use rg; pulled from https://medium.com/@crashybang/supercharge-vim-with-fzf-and-ripgrep-d4661fc853d2
-command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --glob "!node_modules/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+" command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --glob "!node_modules/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --glob "!node_modules/*" --glob "!bower_components/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
 " fzf settings
 set rtp+=/usr/local/opt/fzf

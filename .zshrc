@@ -73,6 +73,11 @@ function take () {
   cd "$1"
 }
 
+## Stop a tmuxinator session
+# function tk() {
+#   tmuxinator stop $1
+# }
+
 # Returns whether the given command is executable or aliased.
 # Pulled from https://github.com/statico/dotfiles -- .zshrc
 _has() {
@@ -102,7 +107,7 @@ alias ta='tmux attach -t '
 alias tl='tmux list-sessions'
 alias tn='tmux new -s '
 alias ts='tmux switch -t '
-alias tk='mux stop '
+alias tk='tmuxinator stop '
 
 # Load tmuxinator alias file
 BIN_DIR="${HOME}/.bin"
