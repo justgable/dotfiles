@@ -99,6 +99,7 @@ alias gcam='git commit -v -a -m '
 alias glog='git log --oneline'
 alias gs='git status -sb'
 alias gba="git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
+alias scrub='awk '\''NR == FNR{ a[$0] = 1;next } !a[$0]'\'''
 
 # -------
 # TMUX

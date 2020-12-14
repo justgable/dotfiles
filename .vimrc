@@ -45,6 +45,7 @@ Plug 'alvan/vim-closetag'
 Plug 'joonty/vdebug'
 Plug 'jremmen/vim-ripgrep'
 Plug 'airblade/vim-gitgutter'
+Plug 'scrooloose/nerdtree'
 
 " -Syntax & Language
 Plug 'mattn/emmet-vim'
@@ -302,6 +303,9 @@ let g:CSApprox_verbose_level = 0
 " let g:syntastic_php_checkers = ['php', 'phpcs']
 " let g:syntastic_php_phpcs_args = "--standard=Drupal"
 
+" NERDTree
+map <C-b> :NERDTreeToggle<CR>
+
 " Airline settings
 let g:airline_symbols = {}
 let g:airline_powerline_fonts=0
@@ -318,13 +322,13 @@ let g:gruvbox_italic=1
 nmap <C-g> :Find<CR>
 " :Find use rg; pulled from https://medium.com/@crashybang/supercharge-vim-with-fzf-and-ripgrep-d4661fc853d2
 " command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --glob "!node_modules/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
-command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --glob "!node_modules/*" --glob "!bower_components/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --glob "!node_modules/*" --glob "!bower_components/*" --glob "!sites/default/files/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
 " fzf settings
 set rtp+=system("which fzf")
 nmap ; :Files<CR>
 nmap <Leader>t :Tags<CR>
-nmap <Leader>r :Buffers<CR>
+nmap <Leader>b :Buffers<CR>
 
 " set grepprg=rg\ --vimgrep\ --no-messages\ --ignore\ --glob "!node_modules"\ --glob "!bower_components"
 
